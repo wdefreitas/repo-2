@@ -1,0 +1,24 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+
+```{r}
+
+# Create a scatter plot of diamond price vs. carat, colored by cut
+ggplot(data = diamonds, aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.5) + # Add points with some transparency
+  labs(title = "Diamond Price vs. Carat by Cut",
+       x = "Carat",
+       y = "Price (USD)",
+       color = "Cut Quality") + # Add informative labels
+  theme_minimal() + # Apply a clean, minimal theme
+  scale_color_brewer(palette = "Set1") # Use a colorblind-friendly palette
+
+```
